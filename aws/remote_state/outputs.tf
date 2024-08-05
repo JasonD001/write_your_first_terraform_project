@@ -1,24 +1,24 @@
 output "s3_bucket_name" {
-  value       = aws_s3_bucket.terraform_state.id
-  description = "The NAME of the S3 bucket"
+  description = "The name of the S3 bucket for Terraform state"
+  value       = aws_s3_bucket.terraform_state.bucket
 }
 
 output "s3_bucket_arn" {
+  description = "The ARN of the S3 bucket for Terraform state"
   value       = aws_s3_bucket.terraform_state.arn
-  description = "The ARN of the S3 bucket"
 }
 
 output "s3_bucket_region" {
+  description = "The region of the S3 bucket for Terraform state"
   value       = aws_s3_bucket.terraform_state.region
-  description = "The REGION of the S3 bucket"
 }
 
 output "dynamodb_table_name" {
+  description = "The name of the DynamoDB table for Terraform state locking"
   value       = aws_dynamodb_table.terraform_lock.name
-  description = "The ARN of the DynamoDB table"
 }
 
 output "dynamodb_table_arn" {
+  description = "The ARN of the DynamoDB table for Terraform state locking"
   value       = aws_dynamodb_table.terraform_lock.arn
-  description = "The ARN of the DynamoDB table"
 }
